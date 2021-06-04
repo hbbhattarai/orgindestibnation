@@ -97,10 +97,10 @@
             map.setView([27.4733136477, 89.6382533581], 14);
         }
         var oneToManyFlowmapLayer;
-        var base = L.esri.basemapLayer('DarkGray');
+        var base = L.esri.basemapLayer('DarkGray').addTo(map);
 
         var sat = L.tileLayer('http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}');
-        var imgaery = L.esri.basemapLayer('Imagery').addTo(map);
+        var imgaery = L.esri.basemapLayer('Imagery');
 
         var basemaps = {
             "World Imagery": sat,
