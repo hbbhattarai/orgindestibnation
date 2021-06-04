@@ -127,6 +127,7 @@ h4,
 .footer {
     background-color: aliceblue;
     height: 60px;
+    text-align: center;
 }
 
 .footer>p {

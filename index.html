@@ -73,9 +73,6 @@
                 </div>
 
             </h5>
-
-
-
         </div>
         <div class="footer">
             <p> &copy;
@@ -91,24 +88,34 @@
 
     </div>
 
+
+
+
+
     <script>
         var map = L.map('mapid');
         var selection;
         var neighbourhoodZones = "https://raw.githubusercontent.com/nimaytenzin/cdrs/main/boud.geojson";
+
         if (L.Browser.mobile) {
             map.setView([27.4733136477, 89.6382533581], 14);
         } else {
-            map.setView([27.4733136477, 89.6382533581],
-                14);
+            map.setView([27.4733136477, 89.6382533581], 14);
         }
         var oneToManyFlowmapLayer;
         var base = L.esri.basemapLayer('DarkGray').addTo(map);
+
         var sat = L.tileLayer('http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}');
         var imgaery = L.esri.basemapLayer('Imagery');
+
         var basemaps = {
             "World Imagery": sat,
             "Base Map": base
+
+
         };
+
+
         Papa.parse('https://raw.githubusercontent.com/kwangyel/zhicharthimphuFrontend/master/od_work_place.csv', {
             download: true,
             header: true,
@@ -128,6 +135,9 @@
                         }
                     })
                 };
+
+
+
                 oneToManyFlowmapLayer = L.canvasFlowmapLayer(geoJsonFeatureCollection, {
                     pointToLayer: function(point, latlng) {
                         var marker = L.circleMarker(latlng);
@@ -149,66 +159,78 @@
                         type: 'classBreaks',
                         field: 'count',
                         classBreakInfos: [{
-                            classMinValue: 0,
-                            classMaxValue: 25,
-                            symbol: {
-                                strokeStyle: '#5CB270',
-                                lineWidth: 0.5,
-                                lineCap: 'round',
-                            }
-                        }, {
-                            classMinValue: 25,
-                            classMaxValue: 50,
-                            symbol: {
-                                strokeStyle: '#82C26E',
-                                lineWidth: 2,
-                                lineCap: 'round',
-                            }
-                        }, {
-                            classMinValue: 50,
-                            classMaxValue: 100,
-                            symbol: {
-                                strokeStyle: '#A71E34',
-                                lineWidth: 3.5,
-                                lineCap: 'round',
-                            }
-                        }, {
-                            classMinValue: 100,
-                            classMaxValue: 200,
-                            symbol: {
-                                strokeStyle: '#B21E35',
-                                lineWidth: 5,
-                                lineCap: 'round',
-                            }
-                        }, {
-                            classMinValue: 200,
-                            classMaxValue: 400,
-                            symbol: {
-                                strokeStyle: '#BD1F36',
-                                lineWidth: 7,
-                                lineCap: 'round',
-                            }
-                        }, {
-                            classMinValue: 400,
-                            classMaxValue: 500,
-                            symbol: {
-                                strokeStyle: '#C71F37',
-                                lineWidth: 9,
-                                lineCap: 'round',
-                            }
-                        }, {
-                            classMinValue: 500,
-                            classMaxValue: 1000,
-                            symbol: {
-                                strokeStyle: '#DA1E37',
-                                lineWidth: 12,
-                                lineCap: 'round',
-                            }
-                        }, ],
+                                classMinValue: 0,
+                                classMaxValue: 25,
+                                symbol: {
+                                    strokeStyle: '#5CB270',
+                                    lineWidth: 0.5,
+                                    lineCap: 'round',
+
+                                }
+                            }, {
+                                classMinValue: 25,
+                                classMaxValue: 50,
+                                symbol: {
+                                    strokeStyle: '#82C26E',
+                                    lineWidth: 2,
+                                    lineCap: 'round',
+
+                                }
+                            }, {
+                                classMinValue: 50,
+                                classMaxValue: 100,
+                                symbol: {
+                                    strokeStyle: '#A71E34',
+                                    lineWidth: 3.5,
+                                    lineCap: 'round',
+
+                                }
+                            }, {
+                                classMinValue: 100,
+                                classMaxValue: 200,
+                                symbol: {
+                                    strokeStyle: '#B21E35',
+                                    lineWidth: 5,
+                                    lineCap: 'round',
+
+                                }
+                            }, {
+                                classMinValue: 200,
+                                classMaxValue: 400,
+                                symbol: {
+                                    strokeStyle: '#BD1F36',
+                                    lineWidth: 7,
+                                    lineCap: 'round',
+
+                                }
+                            }, {
+                                classMinValue: 400,
+                                classMaxValue: 500,
+                                symbol: {
+                                    strokeStyle: '#C71F37',
+                                    lineWidth: 9,
+                                    lineCap: 'round',
+
+                                }
+                            }, {
+                                classMinValue: 500,
+                                classMaxValue: 1000,
+                                symbol: {
+                                    strokeStyle: '#DA1E37',
+                                    lineWidth: 12,
+                                    lineCap: 'round',
+
+                                }
+                            },
+
+
+                        ],
+
                         defaultSymbol: {
                             strokeStyle: '#e7e1ef',
                             lineWidth: 0.5,
                             lineCap: 'round',
+
                         },
                     },
                     pathDisplayMode: 'selection',
@@ -217,42 +239,58 @@
                     animationEasingType: 'In',
                     animationDuration: 2000
                 }).addTo(map);
-                oneToManyFlowmapLayer.on('click',
-                    function(e) {
-                        console.log(e) selection = e.layer.feature.properties.dest_school;
-                        document.getElementById('infod').innerHTML = selection
-                        if (e.sharedOriginFeatures.length) {
-                            oneToManyFlowmapLayer.selectFeaturesForPathDisplay(e.sharedOriginFeatures,
-                                'SELECTION_NEW');
-                        }
-                        if (e.sharedDestinationFeatures.length) {
-                            oneToManyFlowmapLayer.selectFeaturesForPathDisplay(e.sharedDestinationFeatures, 'SELECTION_NEW');
-                        }
-                    });
-                oneToManyFlowmapLayer.selectFeaturesForPathDisplayById('origin_id', 9, true,
-                    'SELECTION_NEW');
+
+                oneToManyFlowmapLayer.on('click', function(e) {
+                    console.log(e)
+                    selection = e.layer.feature.properties.dest_school;
+                    document.getElementById('infod').innerHTML = selection
+
+                    if (e.sharedOriginFeatures.length) {
+                        oneToManyFlowmapLayer.selectFeaturesForPathDisplay(e.sharedOriginFeatures, 'SELECTION_NEW');
+                    }
+                    if (e.sharedDestinationFeatures.length) {
+                        oneToManyFlowmapLayer.selectFeaturesForPathDisplay(e.sharedDestinationFeatures, 'SELECTION_NEW');
+                    }
+                });
+
+
+                oneToManyFlowmapLayer.selectFeaturesForPathDisplayById('origin_id', 9, true, 'SELECTION_NEW');
+
             }
         });
+
         var neighborhood = L.geoJSON(null, {
             style: {
                 fillColor: 'white',
                 weight: 2,
                 opacity: .2,
+
                 dashArray: '3',
                 fillOpacity: 0
             },
             onEachFeature: (feature, layer) => {
+
                 layer.bindTooltip(feature.properties.Name)
             }
         });
+
         var overlayMaps = {
             "Boundaries": neighborhood
         };
-        fetch(neighbourhoodZones).then(res => {
-            return res.json();
-        }).then(data => {
-            neighborhood.addData(data);
-        }) this.layers = L.control.layers(basemaps, overlayMaps).addTo(map);
+
+
+
+
+
+        fetch(neighbourhoodZones)
+            .then(res => {
+                return res.json();
+            })
+            .then(data => {
+                neighborhood.addData(data);
+            })
+
+        this.layers = L.control.layers(basemaps, overlayMaps).addTo(map);
     </script>
 
 
