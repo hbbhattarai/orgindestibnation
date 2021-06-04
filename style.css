@@ -112,6 +112,8 @@ h4,
     font-family: sans-serif;
     width: 90%;
     font-size: medium;
+    font-style: normal;
+    letter-spacing: 1px;
 }
 
 .centered>p {
@@ -119,6 +121,7 @@ h4,
     font-family: sans-serif;
     width: 90%;
     font-size: medium;
+    letter-spacing: 1px;
 }
 
 .dot {
