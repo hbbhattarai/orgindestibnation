@@ -97,13 +97,16 @@
             map.setView([27.4733136477, 89.6382533581], 14);
         }
         var oneToManyFlowmapLayer;
-        var base = L.esri.basemapLayer('DarkGray').addTo(map)
+        var base = L.esri.basemapLayer('DarkGray');
 
-        var sat = L.tileLayer('http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}')
-        var imgaery = L.esri.basemapLayer('Imagery');
+        var sat = L.tileLayer('http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}');
+        var imgaery = L.esri.basemapLayer('Imagery').addTo(map);
+
         var basemaps = {
-            "esri": base,
-            "imagery": sat
+            "World Imagery": sat,
+            "Base Map": base
+
+
         };
 
 
@@ -266,7 +269,7 @@
         });
 
         var overlayMaps = {
-            "Neighbourhoods": neighborhood
+            "Boundaries": neighborhood
         };
 
 
