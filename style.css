@@ -124,6 +124,21 @@ h4,
     letter-spacing: 1px;
 }
 
+.footer {
+    background-color: aliceblue;
+    height: 60px;
+}
+
+.footer>p {
+    margin: 30px;
+    font-family: sans-serif;
+    font-style: oblique;
+    font-size: small;
+    letter-spacing: 2px;
+    color: black;
+    padding: 20px;
+}
+
 .dot {
     height: 10px;
     width: 10px;
