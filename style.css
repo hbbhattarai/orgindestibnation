@@ -1,0 +1,140 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+h4,
+#infod {
+    font-family: sans-serif;
+    text-decoration: aqua;
+    font-style: italic;
+}
+
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+}
+
+
+/* Control the left side */
+
+.left {
+    left: 0;
+    background-color: rgb(108, 107, 107);
+    color: whitesmoke;
+}
+
+
+/* Control the right side */
+
+.right {
+    right: 0;
+}
+
+
+/* If you want the content centered horizontally and vertically */
+
+.logo {
+    display: inline-block;
+    vertical-align: top;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    margin-top: 15px;
+    /* if you want it vertically middle of the navbar. */
+}
+
+
+/* Style the image inside the centered container, if needed */
+
+.navigation-bar {
+    width: 100%;
+    height: 130px;
+    background-color: rgb(245, 162, 84);
+    text-align: center;
+}
+
+.navigation-bar>h1 {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 130px;
+    color: whitesmoke;
+    font-family: sans-serif;
+    font-size: xx-large;
+}
+
+.centered>h2 {
+    text-align: center;
+    margin-top: 50px;
+    width: 90%;
+    font-size: large;
+}
+
+.centered>h3 {
+    text-align: left;
+    margin-top: 50px;
+    width: 90%;
+    font-size: large;
+    margin-left: 50px;
+}
+
+.centered>h4 {
+    text-align: left;
+    margin-top: 10px;
+    width: 90%;
+    font-size: large;
+    margin-left: 50px;
+}
+
+.centered>h5 {
+    text-align: left;
+    margin-top: 10px;
+    width: 90%;
+    font-size: small;
+    margin-left: 50px;
+}
+
+.centeredtext {
+    text-align: left;
+    margin-top: 10px;
+    width: 90%;
+    font-size: small;
+    margin-left: 50px;
+    font-style: italic;
+}
+
+.centeredtext>p {
+    margin: 30px;
+    font-family: sans-serif;
+    width: 90%;
+    font-size: medium;
+}
+
+.centered>p {
+    margin: 30px;
+    font-family: sans-serif;
+    width: 90%;
+    font-size: medium;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(206, 228, 7);
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.dot2 {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(63, 78, 240);
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+}
